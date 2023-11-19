@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>??</title>
+</head>
+<body>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  font-family: 'Courier New', monospace;
+  color: #00FF00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+.terminal {
+  width: 100%;
+  height: 100%;
+}
+
+#code-container {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+  animation: typingAnimation 10s linear infinite;
+}
+
+@keyframes typingAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animation-container {
+  text-align: center;
+  opacity: 0;
+  animation: fadeInOut 3s linear infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    color: red;
+}
+
+
+#continue-button {
+  margin-top: 40px;
+  margin-right: 40px;
+  background-color: #00ff00;
+  color: #000;
+  border: 2px solid #00ff00;
+  padding: 12px 24px;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  box-shadow: inset 0 0 0 0 #00ff00;
+  opacity: 0;
+  z-index: 1;
+}
+
+#continue-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+  pointer-events: none;
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+</style>
+
+<body>
+
+    <div class="container">
+        <h1>SEU DISPOSITIVO FOI HACKEADO</h1>
+    </div>
+
+    <button id="continue-button" class="hidden" onclick="redirectToNextPage()">Continue</button>
+    
+    <div class="terminal">
+        <pre id="code-container"></pre>
+      </div>
+        
+        <div class="animation-text">
+          <span class="line">NOVO ACESSO LIBERADO!</span>
+          <span class="line">DISPOSITIVO HACKEADO</span>
+        </div>
+      </div>
+      <script src="script.js"></script>
+
+<script>const text = "[...] Iniciando sequência de invasão...\n[...] Acessando sistemas...\n[+] Senhas encontradas...\n[+] Conta de administrador comprometida...\n[...] Camuflando rastros...\n[!] Alerta de segurança ignorado...\n[...] Acesso concedido. Bem-vindo, Hacker.\n[...] Extraindo informações confidenciais...\n[!] Firewall detectado. Contornando...\n[...] Descobrindo vulnerabilidades...\n[+] Controle total obtido...\n[!] Rastreando conexões...\n[...] Acesso ao banco de dados garantido...\n[+] Transferência de fundos em andamento...\n[!] Sistema de defesa ativado...\n[...] Anulando protocolos de segurança...\n[+] Upload de malware bem-sucedido...\n[!] Erro: Detecção de atividade suspeita...\n[...] Localização do alvo confirmada...\n[!] Alarme de invasão acionado...\n[...] Ignorando avisos de segurança...\n[!] Interceptando comunicações...\n[...] Controle de câmeras obtido...\n[+] Acesso ao servidor central garantido...\n[!] Negação de serviço iniciada...\n[...] Desativando sistemas de backup...\n[+] Senhas de usuários comprometidas...\n[...] Capturando tráfego de rede...\n[!] Rastreando endereços IP...\n[...] Realizando ataque de força bruta...\n[+] Acesso à rede interna concedido...\n[!] Firewall invadido. Desativando...\n[...] Descriptografando arquivos confidenciais...\n[+] Transferência de dados em andamento...\n[!] Código malicioso implantado com sucesso...\n[...] Encerrando conexões externas...\n[+] Vulnerabilidades exploradas. Sistema comprometido.\n[!] ALERTA: Intrusos detectados...\n[...] Extraindo informações sigilosas...\n[+] Cópias de segurança excluídas...\n[!] O sistema agora pertence a nós...\n[...] Invasão completa. Operação bem-sucedida!";
+
+    const codeContainer = document.getElementById("code-container");
+    let index = 0;
+    
+    function typeText() {
+      codeContainer.textContent = text.slice(0, index);
+      index++;
+      if (index <= text.length) {
+        setTimeout(typeText, Math.floor(Math.random() * 2) + 5); // Random typing speed
+      }
+    }
+    
+    typeText();</script>
+
+
+<script>const nextPageURL = "file:///C:/Users/User/OneDrive/Área%20de%20Trabalho/secreto/drk/nada%20apenas%20nada/NADAA.html";
+
+  window.addEventListener("load", function () {
+    // Simulate a delay (3000ms) before hiding the loading container
+    setTimeout(function () {
+      const loadingContainer = document.getElementById("loading-container");
+      setTimeout(function () {
+
+      }, 10000); // Wait for the fade-out animation to complete (1000ms)
+  
+      // Automatically click the "Continuar" button after 5 seconds (5000ms)
+      setTimeout(function () {
+        const continueButton = document.getElementById("continue-button");
+        continueButton.click(); // Trigger the click event on the button
+      }, 30000); // Wait for 30 seconds (adjust as needed)
+    }, 3000); // Simulate a 3-second delay (adjust as needed)
+  });
+  
+  function showContinueButton() {
+    const mainContent = document.getElementById("main-content");
+    mainContent.style.display = "block";
+    mainContent.style.opacity = "1"; // Apply fade-in effect to the main content
+  
+    const continueButton = document.getElementById("continue-button");
+    continueButton.classList.add("show-button");
+  }
+  
+  function redirectToNextPage() {
+    window.location.href = nextPageURL;
+  }
+</script>
+</html>

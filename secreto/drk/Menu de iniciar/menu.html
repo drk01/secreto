@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello Word!</title>
+    
+</head>
+<style>body {
+    background-color: black;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    color: green;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  .box {
+    background-color: #0b0b0b;
+    color: #00ff00;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #00ff00;
+  }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  canvas {
+    display: block;
+  }
+  
+  
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  button{
+      position: absolute;
+      visibility: hidden;
+    }
+
+    a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(255, 0, 0, 0.384);
+  text-shadow: 0px 0px 10px #ff0000;
+  background-color: rgba(red, green, blue, alpha);
+  border-radius: 10px;
+  border: 2px solid #ff0000;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+a:hover {
+  background-color: #ff0000;
+  border: 2px solid #333;
+  color: #1a1a1a;
+  text-shadow: none;
+  box-shadow: 0px 0px 10px #ff8800;
+  transform: scale(1.1);
+  animation: glitch 0.5s linear infinite;
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #00ff00 0%, #1a1a1a 100%);
+  opacity: 0.2;
+  z-index: -1;
+  transform: scale(1.2);
+}
+
+
+@keyframes glitch {
+  0% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(-5deg);
+  }
+  40% {
+    transform: skew(10deg);
+  }
+  60% {
+    transform: skew(-5deg);
+  }
+  80% {
+    transform: skew(5deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+  </style>
+<body>
+    
+
+    <canvas id="canvas"></canvas>
+
+  <div class="box">
+    <h4>Olá! Você está pronto para embarcar em uma aventura incrível?</h4>
+</div>
+
+<a href="../o começo de tudo/aula 03.html">Começar</a>
+<br>
+<br>
+
+<a href="menu copy.html">☠️</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="../Menu de iniciar/menu copy 2.html">Sobre</a>
+<br>
+<br>
+<a href="../Menu de iniciar/menu copy 3.html">Créditos</a>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    
+    
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  const fontSize = 15;
+  const letters = "010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001010100100101001".split("");
+  const drops = [];
+  
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  for (let i = 0; i < canvas.width / fontSize; i++) {
+    drops[i] = Math.floor(Math.random() * canvas.height);
+  }
+  
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+    ctx.fillStyle = "#0F0";
+    ctx.font = `${fontSize}px arial`;
+  
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      drops[i]++;
+  
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.995) {
+        drops[i] = 0;
+      }
+    }
+  }
+  
+  function animate() {
+    draw();
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+</script>
+</body>
+</html>

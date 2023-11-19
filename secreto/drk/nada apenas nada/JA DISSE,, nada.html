@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>?drk?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="script.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #000;
+        overflow: hidden;
+      }
+      
+      .background-animation::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(transparent, rgba(0, 255, 0, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.02) 1px, transparent 1px),
+                    linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+        background-size: 150px 150px, 150px 150px, 20px 20px, 20px 20px;
+        z-index: 2;
+        animation: backgroundAnimation 10s linear infinite;
+      }
+      
+      @keyframes backgroundAnimation {
+        0% {
+          background-position: 0 0, 75px 75px, 0 0, 40px 40px;
+        }
+        100% {
+          background-position: 150px 150px, 225px 225px, 20px 20px, 40px 40px;
+        }
+      }
+      
+      .loading-container {
+        text-align: center;
+        color: #ff0000;
+        font-family: "Courier New", monospace;
+        font-size: 24px;
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); /* Adiciona sombra ao texto */
+        opacity: 0.9; /* Efeito de transparência */
+        padding: 30px;
+        border: 2px solid #ff0000;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 60, 0, 0.5); /* Efeito de sombra */
+        animation: fadeInOut 4s infinite; /* Animação de fade-in e fade-out */
+      }
+      
+      @keyframes fadeInOut {
+        0%, 100% {
+          opacity: 0.9; /* Começa e termina com a opacidade de 0.9 */
+        }
+        50% {
+          opacity: 0; /* Fica totalmente transparente no meio da animação */
+        }
+        
+      }
+      
+      .loader-circle {
+        border: 6px solid rgba(255, 72, 0, 0.5);
+        border-top: 6px solid #ff0000;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 2s linear infinite;
+      }
+      
+      .loader-text {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+      
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+      #continue-button {
+        margin-top: 40px;
+        background-color: #ff0000;
+        color: #000;
+        border: 2px solid #ff0000;
+        padding: 12px 24px;
+        font-size: 24px;
+        cursor: pointer;
+        font-family: "Courier New", monospace;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 0 #ff0000;
+        opacity: 0;
+      
+        
+      }
+      
+      #continue-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 60, 0, 0.2), transparent);
+        pointer-events: none;
+        animation: scan 3s linear infinite;
+      }
+      
+      
+      @keyframes scan {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      
+      @keyframes blink {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+      
+      .blinking-text {
+        animation: blink 1s infinite;
+        display: inline-block;
+      }
+      </style>
+
+<body>
+
+<div id="loading-container" class="loading-container">
+    <div class="loader">
+      <div class="loader-circle"></div>
+      <div class="loader-text">C?nn?ct?ng t? h?rd m?d?</div>
+    </div>
+  </div>
+
+ 
+  <button id="continue-button" class="hidden" onclick="redirectToNextPage()">Continue</button>
+  
+
+  <script src="script.js"></script>
+
+
+      
+    
+
+    <script>const nextPageURL = "file:///C:/Users/User/OneDrive/Área%20de%20Trabalho/secreto/drk/hard%20mode/Dificil[.html";
+
+      window.addEventListener("load", function () {
+        // Simulate a delay (3000ms) before hiding the loading container
+        setTimeout(function () {
+          const loadingContainer = document.getElementById("loading-container");
+          setTimeout(function () {
+
+          }, 10000); // Wait for the fade-out animation to complete (1000ms)
+      
+          // Automatically click the "Continuar" button after 5 seconds (5000ms)
+          setTimeout(function () {
+            const continueButton = document.getElementById("continue-button");
+            continueButton.click(); // Trigger the click event on the button
+          }, 10200); // Wait for 11 seconds (adjust as needed)
+        }, 3000); // Simulate a 3-second delay (adjust as needed)
+      });
+      
+      function showContinueButton() {
+        const mainContent = document.getElementById("main-content");
+        mainContent.style.display = "block";
+        mainContent.style.opacity = "1"; // Apply fade-in effect to the main content
+      
+        const continueButton = document.getElementById("continue-button");
+        continueButton.classList.add("show-button");
+      }
+      
+      function redirectToNextPage() {
+        window.location.href = nextPageURL;
+      }
+</script>
+
+
+   
+  
+   
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>.</title>
+</head>
+
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(to bottom, #000000, #0e0e0e);
+  }
+
+  .fire-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .fire {
+    width: 100%;
+    height: 100%;
+    background: url('fire.png') center/cover no-repeat;
+    animation: flicker-flame 1s infinite alternate;
+  }
+
+  @keyframes flicker-flame {
+    0%, 100% {
+      transform: translateY(0) scaleY(1);
+    }
+    50% {
+      transform: translateY(-20%) scaleY(0.8);
+    }
+  }
+
+  .content {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+    color: #fff;
+  }
+
+  #texto-animado {
+    font-size: 18px;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+  }
+
+  #continue-button {
+  margin-top: 40px;
+  background-color: #00ff00;
+  color: #000;
+  border: 2px solid #00ff00;
+  padding: 12px 24px;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 0 #00ff00;
+  opacity: 0;
+
+  
+}
+
+#continue-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+  pointer-events: none;
+  animation: scan 3s linear infinite;
+}
+
+
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.blinking-text {
+  animation: blink 1s infinite;
+  display: inline-block;
+}
+</style>
+
+</style>
+<body>
+
+
+  <button id="continue-button" class="hidden" onclick="redirectToNextPage()">Continue</button>
+
+  <div class="fire-container">
+    <div class="fire"></div>
+  </div>
+  <div class="content">
+    <h4 id="texto-animado"></h4>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(function () {
+      var paragraphs = [
+        "Minha busca por aventura me levou por um caminho inesperado, levando-me a lugares obscuros que jamais imaginei explorar.",
+        "O desejo de experimentar algo novo me impulsionou, mas agora percebo que me perdi em sombras indesejadas.",
+        "As páginas enigmáticas do site do Drk pareciam oferecer uma promessa tentadora de emoções fortes, mas à medida que me aprofundava, a empolgação inicial deu lugar a um sentimento de desconforto e apreensão.",
+        "Cada clique era como abrir uma porta para o desconhecido, e a curiosidade cegou-me para os perigos que espreitavam nas entrelinhas digitais.",
+        "A sensação de estar à beira de algo sinistro se misturava ao arrependimento crescente. Enquanto me afundava cada vez mais naquele abismo virtual, a adrenalina inicial transformou-se em um nó de ansiedade no meu estômago.",
+        "Aventurei-me em terreno proibido, deixando-me envolver por um suspense sufocante.",
+        "Agora, as sombras daquela incursão imprudente me cercam, um lembrete constante das consequências da minha busca por emoções.",
+        "Percebo que, por vezes, a busca por aventura pode nos levar por estradas tortuosas e traiçoeiras, deixando-nos presos em um ciclo de arrependimento e inquietação.",
+        "Após uma jornada intensa, finalmente cheguei ao ponto final. Agora, estou pronto para adentrar o intrigante mundo do site DRK.",
+        "..."
+      ];
+
+      var currentIndex = 0;
+      var currentText = paragraphs[currentIndex];
+      var currentTextArray = currentText.split('');
+      var textoAnimado = $('#texto-animado');
+      var typingInterval;
+
+      function typing() {
+        if (currentTextArray.length > 0) {
+          textoAnimado.append(currentTextArray.shift());
+        } else {
+          clearInterval(typingInterval);
+          textoAnimado.animate({ opacity: 1 }, 5000, function () {
+            setTimeout(function () {
+              textoAnimado.animate({ opacity: 0 }, 4500, function () {
+                currentIndex = (currentIndex + 1) % paragraphs.length;
+                currentText = paragraphs[currentIndex];
+                currentTextArray = currentText.split('');
+                textoAnimado.text('');
+                typingInterval = setInterval(typing, 2); // Faster appearance
+              });
+            }, 500);
+          });
+        }
+      }
+
+      typingInterval = setInterval(typing, 10); // Faster appearance
+    });
+  </script>
+
+<script>const nextPageURL = "file:///C:/Users/User/OneDrive/Área%20de%20Trabalho/secreto/drk/batata/errodoerro.html";
+
+  window.addEventListener("load", function () {
+    // Simulate a delay (3000ms) before hiding the loading container
+    setTimeout(function () {
+      const loadingContainer = document.getElementById("loading-container");
+      setTimeout(function () {
+
+      }, 10000); // Wait for the fade-out animation to complete (1000ms)
+  
+      // Automatically click the "Continuar" button after 5 seconds (5000ms)
+      setTimeout(function () {
+        const continueButton = document.getElementById("continue-button");
+        continueButton.click(); // Trigger the click event on the button
+      }, 100000); // Wait for 40 seconds (adjust as needed)
+    }, 3000); // Simulate a 3-second delay (adjust as needed)
+  });
+  
+  function showContinueButton() {
+    const mainContent = document.getElementById("main-content");
+    mainContent.style.display = "block";
+    mainContent.style.opacity = "1"; // Apply fade-in effect to the main content
+  
+    const continueButton = document.getElementById("continue-button");
+    continueButton.classList.add("show-button");
+  }
+  
+  function redirectToNextPage() {
+    window.location.href = nextPageURL;
+  }
+</script>
+</body>
+</html>

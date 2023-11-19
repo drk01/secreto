@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>????</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+        body {
+            background-color: #000;
+            color: #F00;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            background-color: #222;
+            color: #F00;
+            border: 2px solid #F00;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #F00;
+            color: #000;
+            border: 2px solid #F00;
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: #000;
+            color: #F00;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</style>
+<body>
+    <script>
+        function verificarSenha() {
+            const senhaDigitada = document.getElementById("senha").value;
+            const mensagem = document.getElementById("mensagem");
+
+            if (senhaDigitada === "secreto") {
+                mensagem.textContent = "Senha correta!";
+                mensagem.style.color = "#0F0";
+
+                setTimeout(function () {
+                    // Redireciona para outro site (exemplo: https://www.exemplo.com)
+                    window.location.href = "file:///C:/Users/User/OneDrive/Área%20de%20Trabalho/secreto/drk/hard%20mode/finalmente.html";
+                }, 5000); // Aguarda 5 segundos (5000 milissegundos) antes do redirecionamento
+            } else {
+                mensagem.textContent = "Senha incorreta!";
+                mensagem.style.color = "#F00";
+            }
+        }
+    </script>
+</body>
+
+<h1>Digite a senha</h1>
+<input type="password" id="senha" placeholder="Senha">
+<button onclick="verificarSenha()">Verificar</button>
+<p id="mensagem"></p>
+
+
+</html>

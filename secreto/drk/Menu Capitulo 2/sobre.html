@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello Word!</title>
+    
+</head>
+<style>body {
+    background-color: black;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    color: rgb(129, 51, 255);
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+ 
+
+  h5{
+    
+    font-size: 21px;
+    color: rgb(66, 0, 128);
+    text-shadow: 0px 0px 20px #290101;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  button{
+      position: absolute;
+      visibility: hidden;
+    }
+
+    a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(119, 0, 255);
+  text-shadow: 0px 0px 10px #4400ff;
+  background-color: rgba(red, green, blue, alpha);
+  border-radius: 10px;
+  border: 2px solid #8400ff;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+a:hover {
+  background-color: #8c00ff;
+  border: 2px solid #333;
+  color: #1a1a1a;
+  text-shadow: none;
+  box-shadow: 0px 0px 10px #1900ff;
+  transform: scale(1.1);
+  animation: glitch 0.5s linear infinite;
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #7700ff 0%, #1a1a1a 100%);
+  opacity: 0.2;
+  z-index: -1;
+  transform: scale(1.2);
+}
+
+
+@keyframes glitch {
+  0% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(-5deg);
+  }
+  40% {
+    transform: skew(10deg);
+  }
+  60% {
+    transform: skew(-5deg);
+  }
+  80% {
+    transform: skew(5deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+.box {
+    background-color: #0b0b0b;
+    color: #00ff00;
+    padding: 50px;
+    margin: 90px auto;
+    max-width: 1300px;
+    border: 2px solid #bac9ba;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #343534;
+  }
+  
+  </style>
+<body>
+    
+
+    <canvas id="canvas"></canvas>
+
+
+<div class="box">
+ 
+
+  <h5>Capítulo 2: Rumo ao Desconhecido</h5>
+
+       <h5>Enquanto prosseguimos em nossa busca pelos segredos do DRK,
+         vislumbramos um futuro onde a programação continua a ser uma habilidade valiosa 
+         e indispensável no campo da tecnologia. Esta jornada é um testemunho da resiliência da programação,
+          pois mesmo diante de avanços e desafios tecnológicos, ela mantém seu lugar fundamental.
+           Neste mundo em constante evolução, a demanda por programadores talentosos 
+           e experientes permanece sólida.</h5>
+
+       <h5>Entretanto, o que nos aguarda na próxima curva da estrada é incerto. 
+        Assim como a programação perdura, a ameaça representada pelos hackers também persiste. 
+        Embora o seu desaparecimento total seja improvável, 
+        as medidas de segurança cibernética continuam a evoluir. 
+        Esta batalha incessante entre aqueles que exploram sistemas e
+         aqueles que os protegem nos mantém em suspense, 
+         enquanto o futuro revela seus segredos em nossa busca pelo DRK.
+       </h5>
+
+           <a href="../Menu Capitulo 2/PARTE 2.html">Voltar</a>
+
+</div>
+
+</body>
+</html>
